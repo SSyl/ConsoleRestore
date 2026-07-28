@@ -104,11 +104,3 @@ ConsoleKey(Tilde) on Class /Script/Engine.Console:   ConsoleState None -> None
 UE 5.3 guards it with `#if ALLOW_CONSOLE`, but 5.1 most likely still has `#if !UE_BUILD_SHIPPING`.
 The other candidate is the `FKey` argument not marshalling through `ProcessEvent`; untested, since
 neither outcome makes it usable.
-
-## Notes
-
-- No ini edits needed. Palworld ships `ConsoleKeys=Tilde,@,^` in its own `DefaultInput.ini` and the
-  mod reads whatever is configured at runtime. `UInputSettings` is `config=Input`, so
-  `[/Script/Engine.InputSettings]` in `Engine.ini` does nothing.
-- Don't use `UEHelpers.GetPlayerController()` anywhere hot. It's `FindAllOf("PlayerController")`, and
-  Palworld ships `bUseUObjectArrayCache = false`, so that's a full `GUObjectArray` walk.
