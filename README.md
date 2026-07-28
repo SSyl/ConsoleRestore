@@ -104,3 +104,7 @@ ConsoleKey(Tilde) on Class /Script/Engine.Console:   ConsoleState None -> None
 UE 5.3 guards it with `#if ALLOW_CONSOLE`, but 5.1 most likely still has `#if !UE_BUILD_SHIPPING`.
 The other candidate is the `FKey` argument not marshalling through `ProcessEvent`; untested, since
 neither outcome makes it usable.
+
+## License
+
+[Unlicense](LICENSE). Public domain, do whatever you want with it. No attribution needed.
