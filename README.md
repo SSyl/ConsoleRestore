@@ -8,6 +8,11 @@ at a derived offset, has a known input-routing bug, and has only been run agains
 Palworld 1.0.1 (UE 5.1.1), UE4SS Lua. Drop into `UE4SS\Mods\`, `enabled.txt` enables it, backtick
 cycles `None -> Typing -> Open -> None`.
 
+**Expect it to feel rough.** UI keybinds still reach the game while the console is open, so typing a
+command opens menus behind it and Enter gets swallowed. You'll usually need a few presses of Escape
+to unwind those before Enter actually reaches the console. That's the known bug below, not something
+you've installed wrong.
+
 ## What's actually going on
 
 The console was never removed. `ALLOW_CONSOLE` is on in Palworld's shipping build, so the engine
